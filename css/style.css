@@ -1,8 +1,7 @@
 /*********************/
 header{
-	background-color:#555;	
-	margin: 20px 0 20px 0;
-	height: 50px;
+	background-color:#555;		
+	height: 70px;
 }
 .fa-shopping-cart{
 	color:gold;
@@ -30,10 +29,11 @@ header{
 		display: none;
 	}
 	#nav-area{
+		
 		display: flex;
 		justify-content: center;
-		width: 100%;
 		padding: 0;
+		width: 100%;			
 	}
 	main img{
 		width: 100%;
@@ -48,6 +48,27 @@ header{
 /*********************/
 main{
 	background-color:#aaa;
+	height: 500px;
+}
+figure{
+
+}
+input, button{
+	border-radius: 5px 0 0 5px;
+	font-size: 17px;
+	padding: 15px 20px;
+	border:1px solid #eee;
+}
+input{
+	padding: 0 50px;
+	text-align: center;
+}
+button{
+	border-radius: 0 5px 5px 0;
+}
+.fa-search{
+	color:#fff;
+	font-size: 30px;
 }
 #hero{
 	height: 500px;
@@ -63,4 +84,7 @@ section{
 	display: flex;
 	justify-content: center;
 
+}
+.hide .product{
+	display: none;
 }
