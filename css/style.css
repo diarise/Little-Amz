@@ -1,24 +1,22 @@
 /*********************/
 header{
 	background-color:#555;	
-	margin:20px;
+	margin: 20px 0 20px 0;
 	height: 50px;
 }
 .fa-shopping-cart{
 	color:gold;
 	font-size: 25px;
 }
-.margin-right{
-	margin: -29px 0 0 0;
+#logo{
+	padding: 0 0 0 200px;
+}
+#nav-area{
+	padding: 0 200px 0 0;
 }
 #menu a{
-	color:gold;
-}
-.top{
-	margin: 0 200px 0 0;
-}
-#menu a{
-	margin:10px;	
+	padding:10px;
+	color:gold;	
 }
 #menu a:hover{
 	text-decoration: none;
@@ -27,25 +25,42 @@ header{
 	transition: 0.5s ease;
 	padding-bottom: 10px;
 }
+@media (max-width: 648px){
+	#logo{
+		display: none;
+	}
+	#nav-area{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		padding: 0;
+	}
+	main img{
+		width: 100%;
+	}
+	#menu a{
+		
+	}
+	/*header{
+		background-color: transparent;
+	}*/
+}
 /*********************/
 main{
 	background-color:#aaa;
-
 }
 #hero{
 	height: 500px;
-	margin:50px;
+	padding:50px;
 }
-/*@media (max-width: 500px){
-	main{
-	
-	}
-}*/
 /*********************/
 section{
 	background-color:#eee;
 }
-.item{
+.product{
 	background-color: #bbb;
 	margin:10px;
+	display: flex;
+	justify-content: center;
+
 }
