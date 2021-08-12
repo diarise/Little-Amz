@@ -1,6 +1,6 @@
-/*********************/
+		/******* Styling the Navigation *******************/
 header{
-	background-color:#555;		
+	background-color: #2F303A;
 	height: 70px;
 }
 .fa-shopping-cart{
@@ -9,20 +9,23 @@ header{
 }
 #logo{
 	padding: 0 0 0 200px;
+	color:gold;
+	font-size: 25px;
 }
 #nav-area{
 	padding: 0 200px 0 0;
 }
 #menu a{
-	padding:10px;
+	padding:0 25px;
 	color:gold;	
 }
-#menu a:hover{
+#menu a:hover, #cart i:hover{
 	text-decoration: none;
-	color: pink;
-	border-bottom: 3px solid gold;
+	color: #fff;
 	transition: 0.5s ease;
-	padding-bottom: 10px;
+}
+#home i {
+	padding: 0 0 0 3px;
 }
 @media (max-width: 648px){
 	#logo{
@@ -38,21 +41,30 @@ header{
 	main img{
 		width: 100%;
 	}
-	#menu a{
-		
-	}
 	/*header{
 		background-color: transparent;
 	}*/
 }
-/*********************/
+/******* Styling the Main Section with Search Tool *******************/
 main{
-	background-color:#aaa;
 	height: 500px;
 }
-figure{
-
+main{
+	background-image: url("../assets/box.jpg");
+	/*Parallax effects*/
+	position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+/*
+video{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 50%;	
+}*/
 input, button{
 	border-radius: 5px 0 0 5px;
 	font-size: 17px;
@@ -62,29 +74,81 @@ input, button{
 input{
 	padding: 0 50px;
 	text-align: center;
+	width:300px;
+	padding-left:10px;
 }
 button{
 	border-radius: 0 5px 5px 0;
 }
 .fa-search{
-	color:#fff;
+	color:#2F303A;
 	font-size: 30px;
+}
+.fa-search:hover{
+	color:gold;
+	transition: 0.5s ease;
+}
+.search:hover{
+	border-color: gold;
+	transition: 0.5s ease;
+}
+select{
+	color:#fff;
+	padding: 0 10px;
+	border:none;
+	background-color: #2F303A;
 }
 #hero{
 	height: 500px;
 	padding:50px;
 }
-/*********************/
+		/******* Product Listing *******************/
 section{
-	background-color:#eee;
+	background-color: #2F303A;
+	margin: 50px 0;
+}
+h3{
+	color:#fff;
+	text-align: center;
+	padding:20px 0;
 }
 .product{
-	background-color: #bbb;
-	margin:10px;
 	display: flex;
 	justify-content: center;
-
+	padding:0 35px;
+	padding-bottom: 20px;
 }
 .hide .product{
 	display: none;
+}
+.product img{
+	width: 300px;
+	height: 300px;
+	border: 10px solid #fff; 
+}
+.product img:hover{
+	opacity: 50%;
+}
+/******* Closing div *******************/
+.closing{
+	width: 100%;
+	height: 500px;
+	background-image: url("../assets/sticker.jpg");
+	/*Parallax effects*/
+	position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+small, .social-media{
+	background-color: #2F303A;
+}
+small p, .social-media i{
+	color:gold;
+	padding: 0 20px;
+}
+.social-media{
+	padding:10px 0;
+	font-size: 25px;
 }
