@@ -29,7 +29,7 @@
 		<!--<video autoplay loop muted styles="position:absolute;">
 			<source src="assets/pexels3.mp4" type="video/mp4">
 		</video> -->
-		<div class="search d-flex justify-content-center">
+		<div class="d-flex justify-content-center">
 			<input type="enter" name="enter" placeholder="What are you looking for?"></input>
 			<select class="form-field-input form-field-select form-field-filled" name="currencies" aria-label="Change your currency" data-currency-converter="">
 				<option value="USD" selected="selected">USD</option>
@@ -41,28 +41,28 @@
 				<option value="JPY">JPY</option>
 			</select>
 			<div class="submit d-flex d-block d-md-inline-block">
-				<button class="search"><i class="fa fa-search"></i></button>
+				<button id="search"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
 	</main>
 	<section class="d-flex flex-column flex-md-row justify-content-center hide">
 		<div class="product align-items-center flex-column item1">
-			<h3>Title</h3>
-			<img src="assets/health-products.jpg">
+			<h3 id ="title">Title</h3>
+			<img id ="img" src="assets/health-products.jpg">
 			<p class="description"><span class="view">View <i class="fa fa-chevron-down"></i></span>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</p>
 		</div>
 		<div class="product align-items-center flex-column item2">
-			<h3>Check this out:</h3>
-			<img src="assets/watch.jpg">
+			<h3 id="title2">Check this out:</h3>
+			<img id ="img2" src="assets/watch.jpg">
 			<p class="description"><span class="view">View <i class="fa fa-chevron-down"></i></span>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</p>
 		</div>
 		<div class="product align-items-center flex-column item3">
-			<h3>Check this out:</h3>
-			<img src="assets/camera.jpg">
+			<h3 id="title3">Check this out:</h3>
+			<img id ="img3" src="assets/camera.jpg">
 			<p class="description"><span class="view">View<i class="fa fa-chevron-down"></i></span>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</p>
@@ -87,7 +87,8 @@
 	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>
-<script type="text/javascript" src="./js/api.js"></script>
+<!-- <script type="text/javascript" src="./js/api.js"></script> -->
+<script type="text/javascript" src="./js/api2.js"></script>
 
 </body>
 </html>

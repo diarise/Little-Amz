@@ -91,7 +91,7 @@ button{
 	color:gold;
 	transition: 0.5s ease;
 }
-.search:hover{
+#search:hover{
 	border-color: gold;
 	transition: 0.5s ease;
 }
@@ -115,6 +115,7 @@ h3{
 	color:#fff;
 	text-align: center;
 	padding:20px 0;
+	width: 300px;
 }
 .product{
 	display: flex;
