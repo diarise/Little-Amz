@@ -47,10 +47,12 @@ header{
 }
 /******* Styling the Main Section with Search Tool *******************/
 main{
-	height: 500px;
+	/* height: 500px; */
+	height: calc(100vh - 70px);
 }
 main{
-	background-image: url("../assets/box.jpg");
+	/* background-image: url("../assets/box.jpg"); */
+	background:linear-gradient(0deg, hsla(235, 10%, 21%, 0.6) 0%, hsla(235, 10%, 21%, 0.6) 0%), url(../assets/box.jpg);
 	/*Parallax effects*/
 	position: relative;
     background-attachment: fixed;
@@ -74,7 +76,7 @@ input, button{
 input{
 	padding: 0 50px;
 	text-align: center;
-	width:300px;
+	width: 50%; /* width:300px; */
 	padding-left:10px;
 }
 button{
@@ -132,8 +134,9 @@ h3{
 /******* Closing div *******************/
 .closing{
 	width: 100%;
-	height: 500px;
-	background-image: url("../assets/sticker.jpg");
+	/* height: 500px; */
+	height: 100vh;
+	background:linear-gradient(0deg, hsla(235, 10%, 21%, 0.6) 0%, hsla(235, 10%, 21%, 0.6) 0%), url("../assets/sticker.jpg");
 	/*Parallax effects*/
 	position: relative;
     background-attachment: fixed;
@@ -151,4 +154,45 @@ small p, .social-media i{
 .social-media{
 	padding:10px 0;
 	font-size: 25px;
+}
+
+
+/* extra css */
+
+.loader{
+	display: none!important;
+}
+#progress{
+	height: 100vh;
+}
+.showListing{
+	height: 100vh;
+	padding: 4rem 0;
+}
+.search{
+	width: 100%;
+}
+.display-2{
+	color: #fff;
+}
+.lead.text-muted {
+    color: rgba(255,255,255,.7)!important;
+}
+.itemTittle{
+	font-family: Poppins,sans-serif;
+    font-weight: 500;
+	font-size: 1.25rem;
+	color: #2F303A;
+}
+/* #listedItem{
+	
+} */
+.cardWrapper{
+	padding: .75rem;
+}
+body{
+	background-color: #2F303A;
+}
+.itemDteail{
+	background-color: rgba(255,255,255,.7);
 }
