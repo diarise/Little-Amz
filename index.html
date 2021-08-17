@@ -2,15 +2,26 @@
 <html>
 <head>
 	<title>Project 1 - Client Side Web App</title>
-</head>
+
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 <link rel="stylesheet" type="text/css" href="css/style.css">
-
+<!-- <script src="https://use.fontawesome.com/3e4235d3b2.js"></script> -->
+<script src="https://kit.fontawesome.com/ab2155e76b.js" crossorigin="anonymous"></script>
+<!-- <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- <style>
+	#map{
+		height: 500px;
+		width: 100%;
+	}
+</style> -->
+</head>
 <body>
 	<header class="d-flex align-items-center justify-content-between no-gutters">
 		<nav id="logo">
@@ -32,21 +43,13 @@
 			<div class="row justify-content-center mb-4 mb-xl-5">
 				<div class="col-12 col-xl-10 text-center">
 					<h1 class="display-2">The Little Amazon</h1>
-					<p class="lead text-muted mt-4 px-md-6">Find everything at a <span class="font-weight-bold">cheaper price </span></p>
+					<p class="lead text-muted mt-4 px-md-6">Find everything you love at a <span class="font-weight-bold">cheaper price.</span></p>
 				</div>
 			</div>
 			<div class="row mb-5">
 				<div class="search d-flex justify-content-center">
 					<input id="itemInput" type="enter" name="enter" placeholder="What are you looking for?"></input>
-					<!-- <select class="form-field-input form-field-select form-field-filled" name="currencies" aria-label="Change your currency" data-currency-converter="">
-						<option value="USD" selected="selected">USD</option>
-						<option value="INR">INR</option>
-						<option value="GBP">GBP</option>
-						<option value="CAD">CAD</option>
-						<option value="AUD">AUD</option>		  
-						<option value="EUR">EUR</option>				  
-						<option value="JPY">JPY</option>
-					</select> -->
+					
 					<div class="submit d-flex d-block d-md-inline-block">
 						<button id="getItem" class="search"><i class="fa fa-search"></i></button>
 					</div>
@@ -56,7 +59,7 @@
 
 
 	</main>
-	<section class="d-flex flex-column flex-md-row justify-content-center">
+	<section id="sectionOne" class="d-flex flex-column flex-md-row justify-content-center">
 		<div class="container">
 			<div id="progress" class="loader d-flex align-items-center justify-content-center">
 				<img class="d-flex justify-content-center" src="./assets/loading.gif" alt="">
@@ -66,38 +69,98 @@
 			</div>
 
 		</div>
-		<!-- <div class="product flex-column item1">
-			<h3>Check this out:</h3>
-			<img src="assets/1.jpg">
-		</div> -->
-		<!-- <div class="product flex-column item2">
-			<h3>Check this out:</h3>
-			<img src="assets/2.jpg">
-		</div>
-		<div class="product flex-column item3">
-			<h3>Check this out:</h3>
-			<img src="assets/3.jpg">
-		</div> -->
+
 	</section>
-	<section class="closing d-flex flex-column flex-md-row justify-content-center">
+	<section id="sectionTwo" class="closing d-flex flex-column flex-md-row justify-content-center">
 		<div class="d-flex align-items-center justify-content-center">
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-md-6 col-lg-6">
-						<div class="card border-light mb-4 p-5 itemDteail">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quaerat itaque, rerum vitae odio ipsa voluptatem repellendus magnam deserunt voluptatibus facere asperiores cumque accusamus commodi reprehenderit suscipit aut tempore consectetur.
+						<div id="itemDteailImg" class="card border-light mb-4 p-5 itemDteail">
 						</div>
 					</div>
 
 					<div class="col-12 col-md-6 col-lg-6">
 						<div class="card border-light mb-4 p-5 itemDteail">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quaerat itaque, rerum vitae odio ipsa voluptatem repellendus magnam deserunt voluptatibus facere asperiores cumque accusamus commodi reprehenderit suscipit aut tempore consectetur.
+							<div id="listingDetailInfo" class="card-group bg-soft">
+
+							</div>						
 						</div>					
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<section id="sectionThree" class="p-5 trackingMap d-flex flex-column flex-md-row justify-content-center">
+		<!-- <div class="d-flex align-items-center justify-content-center"> -->
+			<div class="container">
+				<div id="row">
+
+					<!--  -->
+
+					
+					<!--  -->
+					<form class="form-horizontal">
+						<div class="form-group">
+							<!-- <label for="from" class="col-xs-2 control-label"><i class="far fa-dot-circle"></i></label> -->
+							<div class="col-xs-4">
+								<input type="text" id="from" placeholder="Origin" class="form-control">
+							</div>
+					</div>
+					<div class="form-group">
+						
+							<!-- <label for="to" class="col-xs-2 control-label"><i class="fas fa-map-marker-alt"></i></label> -->
+							<div class="col-xs-4">
+								<input type="text" id="to" placeholder="Destination" class="form-control">
+							</div>
+						
+						</div>
+						
+					</form>
+
+            <div class="col-xs-offset-2 col-xs-10">
+                <button class="btn btn-info btn-lg " onclick="calcRoute();">Get shipping estimated time</button>
+            </div>
+				</div>
+				<div class="row mt-5">
+					<div class="col-12 col-md-6 col-lg-6">
+						<div class="card border-light mb-4 p-5 itemDteail">
+							<div id="googleMap">
+
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-6">
+						<div class="card border-light mb-4 p-5 itemDteail">
+							<div class="card-group bg-soft">
+								<div id="output">
+
+								</div>
+							</div>						
+						</div>					
+					</div>
+				</div>
+			</div>
+		<!-- </div> -->
+	</section>
+	
+    <!-- <div class="jumbotron">
+        <div class="container-fluid">
+            <h1>Find The Distance Between Two Places.</h1>
+            
+        </div> -->
+        <!-- <div class="container-fluid">
+            <div id="googleMap">
+
+            </div>
+            <div id="output">
+
+            </div>
+        </div> -->
+
+    <!-- </div> -->
 	<div class="d-flex justify-content-center social-media">
 		<i class="fa fa-facebook"></i>
 		<i class="fa fa-instagram"></i>
@@ -112,9 +175,12 @@
 		<p>Privacy Notice</p>
 	</small>
 	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- <script type="text/javascript" src="./js/script.js"></script> -->
-<script type="text/javascript" src="./js/api.js"></script>
 
-</body>
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5BvXH3sekH9wTQzQ-gMJ7Van4clUmEa8&libraries=places"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script type="text/javascript" src="./js/api.js"></script>
+		<script type="text/javascript" src="./js/map-api.js"></script>
+	</body>
 </html>

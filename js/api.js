@@ -1,7 +1,16 @@
 $(function () {
     $("#progress").addClass("loader");
+    // $("#listingDetailInfo").find('.btn-success').click(function (event) {
+    //     event.preventDefault();
+    //     $('html, body').animate({
+    //         scrollTop: $("#sectionThree").offset().top
+    //     }, 2000);
+    // });
     $("#getItem").click(function (event) {
         event.preventDefault();
+        $('html, body').animate({
+            scrollTop: $("#sectionOne").offset().top
+        }, 2000);
         var inputQuery = $("#itemInput").val();
         console.log(inputQuery);
         var settings = {
@@ -14,7 +23,7 @@ $(function () {
             //     cnt: "4"
             // },
             "headers": {
-                "x-rapidapi-key": "2f95a127d2msh8c6f89e9207a19ep14c9b0jsnfacb4cc92019",
+                "x-rapidapi-key": "421a783636msh079ea725ac8fc37p139e85jsndd87f280c62b",
                 "x-rapidapi-host": "amazon24.p.rapidapi.com"
             }
         };
@@ -32,32 +41,21 @@ $(function () {
                 var itemRated = response.docs[i].evaluate_rate;
                 var imageUrl = response.docs[i].product_main_image_url;
                 var itemUrl = response.docs[i].product_detail_url;
-                var itemPrice = response.docs[i].app_sale_price;
+                var getItemPriceFromAzn = response.docs[i].app_sale_price;
+                var itemPrice = parseFloat(getItemPriceFromAzn);
                 var discountPrice = itemPrice - 5;
-
+                var itemId = [i];
                 var len = itemTitle.length;
-
+                console.log(itemPrice);
+                //console.log(itemId);
                 if (len > 45) {
                     var trimTitle = itemTitle.substr(0, 44) + "...";
                 } else {
                     var trimTitle = itemTitle;
                 }
                 itemWrapper += (
-                    // "<div class='col'>" +
-                    // "<div class='card mr-3 ml-3' style='width: 18rem;'>" +
-                    // "<div class='card-body'>" +
-                    // "<h5 class='card-title'>" +
-                    // trimTitle +
-                    // "</h5>" +
-                    // "<img class='img-fluid' src='" + imageUrl + "' alt=''>" +
-                    // "<h6 class='card-subtitle mb-4'>Ratings: " + itemRated + "</h6>" +
-                    // "<button type='button' class='btn btn-warning'>Amz $" + itemPrice + "</button>" +
-                    // "<button type='button' class='btn btn-success'>LitAmz $" + discountPrice + "</button>" +
-                    // "<a href='" + itemUrl + "' target='_blank'><button type='button' class='btn btn-link'><i class='fa fa-amazon' aria-hidden='true'></i></button></a>" +
-                    // "</div>" +
-                    // "</div>" +
-                    // "</div>"
-                    "<div class='col-12 col-md-6 col-lg-4'>" +
+
+                    "<div id='" + itemId + "' class='col-12 col-md-6 col-lg-4 itemListedCard'>" +
                     "<div class='card border-light mb-4'>" +
                     "<div class='cardWrapper'>" +
                     "<img class='img-fluid card-img-top p-2 rounded-xl' src='" + imageUrl + "' alt=''>" +
@@ -66,117 +64,128 @@ $(function () {
                     "<span class='badge badge-pill badge-primary'>" + itemRated + "</span>" +
                     "</div>" +
                     "</div>" +
-                    // "<div class='card-footer bg-soft border-top'>" +
-                    // "<div class='d-flex justify-content-between'>" +
-                    // "<div class='col pl-0'>LitAmz $" + discountPrice + "</div>" +
-                    // // "<div class='col pl-0'>" +
 
-                    // "<div class='col pl-0'><a href='" + itemUrl + "' target='_blank'><i class='fa fa-amazon' aria-hidden='true'></i></a> " + itemPrice + "</div>" +
-                    // // "</div>" +
-                    // "</div>" +
-                    // "</div>" +
+                    "<div class='col pl-0 LitAmz d-none'>" + discountPrice + "</div>" +
+                    "<div class='col pl-0 azmPrice d-none'>" + itemPrice + "</div>" +
+
+
                     "<div class='card-footer bg-soft border-top'>" +
-                    // "<div class='col'>" +
+
                     "<button type='button' class='btn btn-success'>View detail</button>" +
-                    // "</div>" +
-                    // "<div class='col'>" +
-                    // "<button type='button' class='btn btn-warning'>LitAmz $" + discountPrice + "</button>" +
-                    // "</div>" +
-                    // "<div class='col pr-0'>" +
-                    // "<button type='button' class='btn btn-success'>LitAmz $" + discountPrice + "</button>" +
-                    // "</div>" +
+
                     "</div>" +
                     "</div>" +
+                    "<div class='itemHidenTitle d-none'>" + itemTitle + "</div>" +
+                    "<div class='itemHidenLink d-none'>" + itemUrl + "</div>" +
                     "</div>"
+
                 );
             }
             $(itemWrapper).appendTo("#listedItem");
             $("#listedItem").addClass("showListing");
 
-            // console.log(response);
-            // console.log(response.docs[1].product_title);
-            // //console.log(response.docs[0].product_main_image_url);
-            // console.log(response.docs[1].product_detail_url);
-            // console.log(response.docs[1].evaluate_rate);
-            // console.log(response.docs[1].original_price);
-            //console.log(response.docs[0]);
 
-            // // Saving the image_original_url property
-            // var imageUrl = response.docs[1].product_main_image_url;
-
-            // // Creating and storing an image tag
-            // var itemImage = $("<img>");
-
-            // var itemTitle = response.docs[1].product_title;
-
-            // var itemRated = response.docs[1].evaluate_rate;
-
-            // var itemPrice = response.docs[1].original_price;
-
-            // var itemUrl = response.docs[1].product_detail_url;
-
-            // var titleSection = $("<div>").text(itemTitle);
-
-            // var ratedSection = $("<div>").text(itemRated);
-
-            // var priceSection = $("<div>").text(itemPrice);
-
-            // var urlSection = $("<a>").attr('href', itemUrl).text("view an amazon");
-
-            // // Setting the catImage src attribute to imageUrl
-            // itemImage.attr("src", imageUrl);
-            // itemImage.attr("alt", itemTitle);
-
-            // // Prepending the catImage to the images div
-            // $("#listedItem").prepend(titleSection);
-            // $("#listedItem").prepend(priceSection);
-            // $("#listedItem").prepend(itemImage);
-            // $("#listedItem").prepend(ratedSection);
-            // $("#listedItem").prepend(urlSection);
 
         });
         $(document).ajaxStop(function () {
             //console.log("finish loading");
             //$("#progress").hide();
             $("#progress").addClass("loader");
+
+            $('.itemListedCard').each(function () {
+                //$(".itemListedCard").click(function () {
+                // display product detail here
+
+                var getItemId = $(this).attr('id');
+                var getItemHidenTitle = $(this).find('.itemHidenTitle').text();
+                var getItemdiscountedPrice = $(this).find('.LitAmz').text();
+                var getItemAznPrice = $(this).find('.azmPrice').text();
+                var getItemImg = $(this).find('img').attr('src');
+                var getItemLink = $(this).find('.itemHidenLink').text();
+                var priceConvertorMx = (getItemdiscountedPrice * 19.88).toFixed(2);
+                var priceConvertorCd = (getItemdiscountedPrice * 1.25).toFixed(2);
+                $(this).find('.btn-success').click(function () {
+                    $('html, body').animate({
+                        scrollTop: $("#sectionTwo").offset().top
+                    }, 2000);
+                    var itemDetailWrapper = "";
+                    var itemDetailInfoWrapper = "";
+                    itemDetailWrapper += (
+                        "<img class='img-fluid card-img-top p-2 rounded-xl' src='" + getItemImg + "' alt=''>"
+                    );
+                    itemDetailInfoWrapper += (
+                        //"<img class='img-fluid card-img-top p-2 rounded-xl' src='" + getItemImg + "' alt=''>"
+                        "<div class='h5 mt-3 mb-4'>" + getItemHidenTitle + "</div>" +
+                        "<div class='card mb-0'>" +
+                        "<div class='card-body text-center px-0 px-md-3'>" +
+                        "<div class='icon icon-secondary'>" +
+                        // "<i class='fa fa-amazon' aria-hidden='true'></i>" +
+                        "<span class='h5 mt-3 mb-0'> our Price</span>" +
+                        "</div>" +
+                        "<span class='text-muted h6 font-weight-normal mb-0'><button type='button' class='btn btn-success'>" + getItemdiscountedPrice + "</button></span>" +
+                        "</div>" +
+                        "</div>" +
+
+
+                        "<div class='card mb-0 border-left'>" +
+                        "<div class='card-body text-center px-0 px-md-3'>" +
+                        "<div class='icon icon-secondary'>" +
+                        "<i class='fa fa-amazon' aria-hidden='true'></i>" +
+                        "<span class='h5 mt-3 mb-0'> Price</span>" +
+                        "</div>" +
+                        "<span class='text-muted h6 font-weight-normal mb-0'>" + getItemAznPrice + "</span>" +
+                        "</div>" +
+                        "</div>" +
+                        "<hr>" +
+
+                        "<div class='h5 mt-3 mb-4 mt-3' style='width: 100%;'>Price convertor</div>" +
+                        "<div style='width: 100%;'>" +
+                        "<button id='showMx' type='button' class='btn btn-light'>Mexican Peso: " +
+                        "<span class='h5 mt-3 mb-0 d-none'> $ " + priceConvertorMx + " MXN</span>" +
+                        "</button>" +
+                        "</div>" +
+
+                        "<div class='mt-3' style='width: 100%;'>" +
+                        "<button id='showCd' type='button' class='btn btn-light'>Canadian dollar: " +
+                        "<span class='h5 mt-3 mb-0 d-none'> $ " + priceConvertorCd + " CA$</span>" +
+                        "</button>" +
+                        "<div class='mt-3' style='width: 100%;'><a href='" + getItemLink + "' target='_blank'><i class='fa fa-amazon' aria-hidden='true'></i> View item on Amazon</a></div>" +
+                        "<button id='getMap' type='button' class='btn btn-light mt-3'>See the shipping route and milage</button>" +
+                        "</div>"
+                        // "<button type='button' class='btn btn-light'>" + getItemdiscountedPrice + "</button>"
+                    );
+
+
+
+                    $(itemDetailWrapper).appendTo("#itemDteailImg");
+                    $(itemDetailInfoWrapper).appendTo("#listingDetailInfo");
+
+                    $("#showMx").click(function () {
+                        // console.log("test");
+                        $(this).find("span").removeClass("d-none");
+
+                    });
+                    $("#showCd").click(function () {
+                        // console.log("test");
+                        $(this).find("span").removeClass("d-none");
+
+                    });
+
+                });
+                // $("#itemDteailImg").empty(); 
+
+            });
+
         });
 
+
+
+
         $("#listedItem").empty();
+
+
+
     });
-
-
-
-    // currency convertor
-
-    // // set endpoint and your API key
-    // endpoint = 'convert';
-    // access_key = '43816bf8e5f9d14477f96eb6ea52e1f9';
-
-    // // define from currency, to currency, and amount
-    // from = 'EUR';
-    // to = 'GBP';
-    // amount = '10';
-
-    // symbols = 'CAD';
-
-    // // execute the conversion using the "convert" endpoint:
-    // $.ajax({
-    //     //url: 'https://data.fixer.io/api/' + endpoint + '?access_key=' + access_key + '&from=' + from + '&to=' + to + '&amount=' + amount,
-    //     url: 'https://data.fixer.io/api/latest?access_key=' + access_key + '&symbols=' + symbols,
-    //     dataType: 'jsonp',
-    //     success: function (json) {
-
-    //         // access the conversion result in json.result
-    //         console.log(json)
-    //         //alert(json.result);
-
-    //     }
-    // });
-
-
-
-
-    // 
 
 
 
