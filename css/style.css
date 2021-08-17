@@ -29,7 +29,7 @@
 			padding: 0 0 0 3px;
 		}
 		h1{
-			font-family: "Fira Sans"
+			font-family: "Fira Sans";
 		}
 		@media (max-width: 648px){
 			#logo{
@@ -208,6 +208,11 @@
 		.itemDteail{
 			background-color: rgba(255,255,255,.7);
 		}
+		.btn.btn-info.btn-lg{
+    background: gold;
+    color: #212529;
+    border-color: #212529;
+}
 /*map*/
 #googleMap {
 	width: 100%;
